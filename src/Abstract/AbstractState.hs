@@ -19,8 +19,9 @@ ascendingValues map = Prelude.map snd (Map.toAscList map)
 
 type AbstractState a = Map PC (AbstractTriple a)
 
-data AbstractTriple a where
+data AbstractTriple a where {
   AbsTriple :: a -> a -> a -> AbstractTriple a
+} deriving (Eq,Show)
   --AbsTriple :: CompleteLattice a => a -> a -> a -> AbstractTriple a
 
 instance Poset a => Poset (AbstractTriple a) where
