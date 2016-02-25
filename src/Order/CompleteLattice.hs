@@ -2,6 +2,6 @@ module Order.CompleteLattice where
 
 import Order.Lattice
 
-class CompleteLattice l where
+class Lattice l => CompleteLattice l where
   top :: l
   bot :: l
