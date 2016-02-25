@@ -18,6 +18,8 @@ programPoints :: Program -> Set PC
 programPoints [] = error "illegal empty program"
 programPoints prog = Set.fromList [1..(length prog)]
 
+programCounter :: State -> PC
+programCounter (pc,_,_,_) = pc
 xRegister :: State -> Int
 xRegister (_,x,_,_) = x
 yRegister :: State -> Int
