@@ -26,3 +26,39 @@ yRegister :: State -> Int
 yRegister (_,_,y,_) = y
 zRegister :: State -> Int
 zRegister (_,_,_,z) = z
+
+incX :: Statement -> Bool
+incX (Inc X) = True
+incX _ = False
+
+incY :: Statement -> Bool
+incY (Inc Y) = True
+incY _ = False
+
+incZ :: Statement -> Bool
+incZ (Inc Z) = True
+incZ _ = False
+
+decX :: Statement -> Bool
+decX (Dec X) = True
+decX _ = False
+
+decY :: Statement -> Bool
+decY (Dec Y) = True
+decY _ = False
+
+decZ :: Statement -> Bool
+decZ (Dec Z) = True
+decZ _ = False
+
+zeroX :: Statement -> Bool
+zeroX (Zero X _ _) = True
+zeroX _ = False
+
+zeroY :: Statement -> Bool
+zeroY (Zero Y _ _) = True
+zeroY _ = False
+
+zeroZ :: Statement -> Bool
+zeroZ (Zero Z _ _) = True
+zeroZ _ = False
