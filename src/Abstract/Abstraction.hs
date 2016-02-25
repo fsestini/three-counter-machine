@@ -26,7 +26,7 @@ programCounters :: Set State -> Set PC
 programCounters = Set.map programCounter
 
 delta' :: PowerSet State -> PC -> PowerSet (Int, Int, Int)
-delta' states pc = let filtered = Set.filter (\(ppp,_,_,_) -> pc == ppp) states
+delta' states pc = let filtered = Set.filter ((pc==) . programCounter) states
                    in Set.map (\(_,x,y,z) -> (x,y,z)) filtered
 
 collectFirst :: Ord a => Set (a,b,c) -> Set a
