@@ -8,6 +8,7 @@ import Lang.Statement
 import Concrete.ConcreteSemantics
 import Abstract.AbstractState
 import Order.GaloisConnection
+import Domain.PowerSet
 
 -- Establishes the soundness criterion between concrete and abstract semantics
 instance (GaloisConnection (PowerSet Int) a) =>
