@@ -21,8 +21,11 @@ type AbstractState a = Map PC (AbstractTriple a)
 
 data AbstractTriple a where {
   AbsTriple :: a -> a -> a -> AbstractTriple a
-} deriving (Eq,Show)
+} deriving (Eq)
   --AbsTriple :: CompleteLattice a => a -> a -> a -> AbstractTriple a
+
+instance Show a => Show (AbstractTriple a) where
+  show (AbsTriple a1 a2 a3) = (show a1) ++ " " ++ (show a2) ++ " " ++ (show a3)
 
 instance Poset a => Poset (AbstractTriple a) where
   (AbsTriple a1 a2 a3) `leq` (AbsTriple a1' a2' a3') =
