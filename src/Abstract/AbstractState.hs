@@ -3,8 +3,8 @@
 
 module Abstract.AbstractState where
 
-import Data.Map as Map
-import Data.Set as Set
+import Data.Map as Map hiding(foldr,map)
+import Data.Set as Set hiding(foldr,map)
 import Concrete.ConcreteSemantics
 import Order.Poset
 import Order.Lattice
